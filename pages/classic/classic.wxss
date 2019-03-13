@@ -1,1 +1,23 @@
 /* pages/classic/classic.wxss */
+.container {
+    display: flex;
+    height: 400px;
+    background-color: #ccc;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.chunk {
+    width: 150px;
+    height: 100px;
+}
+
+.color1 {
+    background-color: cornflowerblue
+}
+.color2 {
+    background-color: brown
+}
+.color3 {
+    background-color: coral
+}
