@@ -1,5 +1,13 @@
 {
   "pages": [
     "pages/classic/classic"
-  ]
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#7a7ae6",
+    "navigationBarTitleText": "跟着流年去旅行",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false
+  }
 }
