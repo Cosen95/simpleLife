@@ -1,5 +1,6 @@
 <!--pages/classic/classic.wxml-->
 <v-like check="{{check}}" count="{{count}}" />
+<v-movie content="{{content}}" image="{{image}}" />
 
 
     

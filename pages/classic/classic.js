@@ -17,10 +17,12 @@ Page({
   onLoad: function (options) {
     classic.getLatest((res) => {
       console.log(res.data[0]);
-      const { count, check } = res.data[0];
+      const { count, check, content, image } = res.data[0];
       this.setData({
         count,
-        check
+        check,
+        content,
+        image
       })
     })
    
