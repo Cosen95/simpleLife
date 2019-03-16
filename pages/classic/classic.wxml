@@ -1,5 +1,5 @@
 <!--pages/classic/classic.wxml-->
-<v-like />
+<v-like check="{{check}}" count="{{count}}" />
 
 
     

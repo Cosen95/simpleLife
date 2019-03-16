@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    check: false,
+    count: 0
   },
 
   /**
@@ -15,7 +16,12 @@ Page({
    */
   onLoad: function (options) {
     classic.getLatest((res) => {
-      console.log(res);
+      console.log(res.data[0]);
+      const { count, check } = res.data[0];
+      this.setData({
+        count,
+        check
+      })
     })
    
   },
