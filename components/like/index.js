@@ -26,7 +26,13 @@ Component({
    */
   methods: {
     handleLike(e) {
-      console.log(e);
+      let check = this.properties.check;
+      let count = this.properties.count;
+      count = check ? count - 1 : count + 1;
+      this.setData({
+        count,
+        check: !check
+      })
     }
   }
 })
