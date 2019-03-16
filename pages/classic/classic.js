@@ -1,4 +1,6 @@
 // pages/classic/classic.js
+import { HTTP } from '../../util/http.js';
+let http = new HTTP();
 Page({
 
   /**
@@ -12,14 +14,34 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // wx.request({
+    //   url: 'https://www.easy-mock.com/mock/5c8c9090800fbb7305fd8106/simple/classic/latest'
+    // })
+    http.request({
+      url: 'classic/latest',
+      success: (res) => {
+        console.log(res);
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    // promise处理异步
+    // let Promise = new Promise((resolve, reject) => {
+    //   wx.request({
+    //     url: '',
+    //     success: (res) => {
+    //       resolve(res)
+    //     }
+    //   })
+    // })
 
+    // Promise.then((res) => {
+    //   console.log(res);
+    // })
   },
 
   /**
