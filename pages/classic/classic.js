@@ -1,6 +1,6 @@
 // pages/classic/classic.js
-import { HTTP } from '../../util/http.js';
-let http = new HTTP();
+import { ClassicModel } from '../../models/classic.js';
+let classic = new ClassicModel();
 Page({
 
   /**
@@ -14,15 +14,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.request({
-    //   url: 'https://www.easy-mock.com/mock/5c8c9090800fbb7305fd8106/simple/classic/latest'
-    // })
-    http.request({
-      url: 'classic/latest',
-      success: (res) => {
-        console.log(res);
-      }
+    classic.getLatest((res) => {
+      console.log(res);
     })
+   
   },
 
   /**
