@@ -18,7 +18,7 @@ class HTTP {
             success: (res) => {
                 let code = res.statusCode.toString();
                 if(code.startsWith('2')) {
-                    success(res.data)
+                    success && success(res.data)
                 } else {
                     // 需根据服务器返回errcode显示对应报错信息，这里errcode默认给1
                     this._show_error(1)

@@ -33,6 +33,11 @@ Component({
         count,
         check: !check
       })
+      // 激活自定义事件
+      let behavior = this.properties.check ? 'like' : "cancel";
+      this.triggerEvent('like', {
+        behavior
+      }, {})
     }
   }
 })

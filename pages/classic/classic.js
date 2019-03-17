@@ -1,6 +1,9 @@
 // pages/classic/classic.js
 import { ClassicModel } from '../../models/classic.js';
-let classic = new ClassicModel();
+import { LikeModel } from '../../models/like.js';
+
+let classicModel = new ClassicModel();
+let likeModel = new LikeModel();
 Page({
 
   /**
@@ -15,17 +18,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    classic.getLatest((res) => {
+    classicModel.getLatest((res) => {
       console.log(res.data[0]);
-      const { count, check, content, image } = res.data[0];
+      // id: 期刊在数据中序号，供点赞使用
+      // type: 期刊类型,这里的类型分为:100 电影 200 音乐 300 句子
+      const { count, check, content, image, id, type } = res.data[0];
       this.setData({
         count,
         check,
         content,
-        image
+        image,
+        id,
+        type
       })
     })
    
+  },
+
+  handleLike: function(event) {
+    let { detail = {} } = event;
+    let { behavior = '' } = detail;
+    const { id, type } = this.data;
+    likeModel.like(behavior,id,type)
   },
 
   /**
