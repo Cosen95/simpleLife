@@ -22,14 +22,15 @@ Page({
       console.log(res.data[0]);
       // id: 期刊在数据中序号，供点赞使用
       // type: 期刊类型,这里的类型分为:100 电影 200 音乐 300 句子
-      const { count, check, content, image, id, type } = res.data[0];
+      const { count, check, content, image, id, type, index } = res.data[0];
       this.setData({
         count,
         check,
         content,
         image,
         id,
-        type
+        type,
+        index
       })
     })
    

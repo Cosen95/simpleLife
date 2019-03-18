@@ -1,4 +1,5 @@
 <!--pages/classic/classic.wxml-->
+<v-epsoide index="{{index}}" />
 <v-like bind:like="handleLike" check="{{check}}" count="{{count}}" />
 <v-movie content="{{content}}" image="{{image}}" />
 
