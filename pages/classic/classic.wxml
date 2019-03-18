@@ -1,6 +1,8 @@
 <!--pages/classic/classic.wxml-->
-<v-epsoide index="{{index}}" />
-<v-like bind:like="handleLike" check="{{check}}" count="{{count}}" />
+<view class="header">
+    <v-epsoide class="epsoide" index="{{index}}" />
+    <v-like class="like" bind:like="handleLike" check="{{check}}" count="{{count}}" />
+</view>
 <v-movie content="{{content}}" image="{{image}}" />
 
 
