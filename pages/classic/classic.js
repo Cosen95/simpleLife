@@ -45,6 +45,12 @@ Page({
     const { id, type } = this.data;
     likeModel.like(behavior,id,type)
   },
+  handleNext: function(event) {
+    // 下一期期刊
+  },
+  handlePrevious: function(event) {
+    // 上一期期刊
+  }
 
   /**
    * 生命周期函数--监听页面初次渲染完成
