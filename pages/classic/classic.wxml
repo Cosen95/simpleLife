@@ -5,7 +5,7 @@
         <v-like class="like" bind:like="handleLike" check="{{check}}" count="{{count}}" />
     </view>
     <v-movie content="{{content}}" image="{{image}}" />
-    <v-navi class="navi" title="{{title}}" latest="{{latest}}" first="{{first}}" />
+    <v-navi class="navi" bind:left="handleNext" bind:right="handlePrevious" title="{{title}}" latest="{{latest}}" first="{{first}}" />
 </view>
 
     
