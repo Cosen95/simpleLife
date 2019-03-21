@@ -2,6 +2,7 @@
 import { classicBehavior } from '../classic-behavior';
 Component({
   behaviors: [classicBehavior],
+  // 多继承
   /**
    * 组件的属性列表
    */
