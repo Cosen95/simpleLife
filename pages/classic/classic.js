@@ -50,7 +50,7 @@ Page({
   },
   handlePrevious: function(event) {
     // 上一期期刊
-  }
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
