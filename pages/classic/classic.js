@@ -20,6 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // latestClassic latestIndex  currentClassic currentIndex
     classicModel.getLatest((res) => {
       console.log(res.data[0]);
       // id: 期刊在数据中序号，供点赞使用
@@ -47,9 +48,26 @@ Page({
   },
   handleNext: function(event) {
     // 下一期期刊
+    
   },
   handlePrevious: function(event) {
     // 上一期期刊
+    classicModel.getPrevious((res) => {
+      console.log(res);
+      const { count, check, content, image, id, type, index, title } = res.data;
+      this.setData({
+        count,
+        check,
+        content,
+        image,
+        id,
+        type,
+        index,
+        title,
+        latest: classicModel.isLatest(index),
+        first: classicModel.isFirst(index)
+      })
+    })
   },
 
   /**
