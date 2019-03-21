@@ -11,9 +11,9 @@ class ClassicModel extends HTTP {
           })
     }
 
-    getPrevious(callback) {
+    getClassic(nextOrPrev,callback) {
         this.request({
-            url: 'classic/previous',
+            url: `classic/${nextOrPrev}`,
             success: (res) => {
                 callback(res);
             }

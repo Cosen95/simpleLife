@@ -48,11 +48,11 @@ Page({
   },
   handleNext: function(event) {
     // 下一期期刊
-    
+    this._updateClassic('next');    
   },
-  handlePrevious: function(event) {
-    // 上一期期刊
-    classicModel.getPrevious((res) => {
+
+  _updateClassic: function(nextOrPrev) {
+    classicModel.getClassic(nextOrPrev, (res) => {
       console.log(res);
       const { count, check, content, image, id, type, index, title } = res.data;
       this.setData({
@@ -68,6 +68,11 @@ Page({
         first: classicModel.isFirst(index)
       })
     })
+  },
+
+  handlePrevious: function(event) {
+    // 上一期期刊
+    this._updateClassic('previous');
   },
 
   /**
