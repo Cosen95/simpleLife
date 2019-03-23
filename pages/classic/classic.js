@@ -54,7 +54,7 @@ Page({
   _updateClassic: function(nextOrPrev) {
     classicModel.getClassic(this.data.index, nextOrPrev, (res) => {
       console.log(res);
-      const { count, check, content, image, id, type, index, title } = res.data;
+      const { count, check, content, image, id, type, index, title, url = '' } = res.data;
       this.setData({
         count,
         check,
@@ -64,6 +64,7 @@ Page({
         type,
         index,
         title,
+        url,
         latest: classicModel.isLatest(index),
         first: classicModel.isFirst(index)
       })

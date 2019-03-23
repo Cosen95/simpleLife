@@ -5,7 +5,7 @@
         <v-like class="like" bind:like="handleLike" check="{{check}}" count="{{count}}" />
     </view>
     <v-movie wx:if="{{type === 100}}" content="{{content}}" image="{{image}}" />
-    <v-music wx:if="{{type === 200}}" content="{{content}}" image="{{image}}" />
+    <v-music wx:if="{{type === 200}}" src="{{url}}" title="{{title}}" content="{{content}}" image="{{image}}" />
     <v-essay wx:if="{{type === 300}}" content="{{content}}" image="{{image}}" />
     <v-navi class="navi" bind:left="handleNext" bind:right="handlePrevious" title="{{title}}" latest="{{latest}}" first="{{first}}" />
 </view>
