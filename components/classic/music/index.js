@@ -24,6 +24,7 @@ Component({
   attached() {
     // 在组件实例进入页面节点树时执行
     this._recoverStatus();
+    this._monitorSwitch();
   },
   detached() {
     // 在组件实例被从页面节点树移除时执行
@@ -64,6 +65,20 @@ Component({
           isPlay: true
         })
       }
+    },
+    _monitorSwitch: function() {
+      audioManage.onPlay(() => {
+        this._recoverStatus();
+      })
+      audioManage.onPause(() => {
+        this._recoverStatus();
+      })
+      audioManage.onStop(() => {
+        this._recoverStatus();
+      })
+      audioManage.onEnded(() => {
+        this._recoverStatus();
+      })
     }
   }
 })
