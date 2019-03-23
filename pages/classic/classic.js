@@ -22,10 +22,10 @@ Page({
   onLoad: function (options) {
     // latestClassic latestIndex  currentClassic currentIndex
     classicModel.getLatest((res) => {
-      console.log(res.data[0]);
+      console.log(res.data);
       // id: 期刊在数据中序号，供点赞使用
       // type: 期刊类型,这里的类型分为:100 电影 200 音乐 300 句子
-      const { count, check, content, image, id, type, index, title } = res.data[0];
+      const { count, check, content, image, id, type, index, title } = res.data;
       this.setData({
         count,
         check,
@@ -52,7 +52,7 @@ Page({
   },
 
   _updateClassic: function(nextOrPrev) {
-    classicModel.getClassic(nextOrPrev, (res) => {
+    classicModel.getClassic(this.data.index, nextOrPrev, (res) => {
       console.log(res);
       const { count, check, content, image, id, type, index, title } = res.data;
       this.setData({
