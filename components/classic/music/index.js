@@ -1,5 +1,6 @@
 // components/classic/music/index.js
 import { classicBehavior } from '../classic-behavior';
+// BackgroundAudioManager 实例，可通过 wx.getBackgroundAudioManager 获取
 let audioManage =  wx.getBackgroundAudioManager()
 Component({
   behaviors: [classicBehavior],
@@ -20,6 +21,15 @@ Component({
     playSrc: 'images/player@playing.png'
   },
 
+  attached() {
+    // 在组件实例进入页面节点树时执行
+    this._recoverStatus();
+  },
+  detached() {
+    // 在组件实例被从页面节点树移除时执行
+    // audioManage.stop();
+  },
+
   /**
    * 组件的方法列表
    */
@@ -38,6 +48,21 @@ Component({
           isPlay: false
         })
         audioManage.pause();
+      }
+    },
+    _recoverStatus: function() {
+      // 如果当前没有音乐播放，则将状态置为待播放
+      if(audioManage.paused) {
+        this.setData({
+          isPlay: false
+        })
+        return
+      }
+      // 如果当前页面播放音乐与BackgroundAudioManager 实例中的音乐相同，则保留当前音乐播放状态
+      if(audioManage.src === this.properties.src) {
+        this.setData({
+          isPlay: true
+        })
       }
     }
   }
