@@ -7,8 +7,8 @@ class ClassicModel extends HTTP {
         this.request({
             url: 'classic/latest',
             success: (res) => {
-                let key = this._fullKey(res.data.index);
-                wx.setStorageSync(key, res.data);
+                // let key = this._fullKey(res.data.index);
+                // wx.setStorageSync(key, res.data);
                 this._setLatestIndex(res.data.index);
                 callback(res);
             }
@@ -16,21 +16,21 @@ class ClassicModel extends HTTP {
     }
 
     getClassic(index, nextOrPrev,callback) {
-        let key = nextOrPrev === 'next' ? this._fullKey(index + 1) :
-            this._fullKey(index - 1);
-        let classic = wx.getStorageSync(key);
-        if(!classic) {
+        // let key = nextOrPrev === 'next' ? this._fullKey(index + 1) :
+        //     this._fullKey(index - 1);
+        // let classic = wx.getStorageSync(key);
+        // if(!classic) {
             this.request({
                 url: `classic/${nextOrPrev}`,
                 success: (res) => {
-                    let key = this._fullKey(res.data.index);
-                    wx.setStorageSync(key,res.data);
+                    // let key = this._fullKey(res.data.index);
+                    // wx.setStorageSync(key,res.data);
                     callback(res);
                 }
             })
-        } else {
-            callback(classic)
-        }
+        // } else {
+        //     callback(classic)
+        // }
         
     }
 
