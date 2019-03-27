@@ -10,16 +10,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    books: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const bookList = bookModel.getHotList();
-    bookList.then((res) => {
+    bookModel.getHotList()
+    .then((res) => {
       console.log('书籍信息',res)
+      this.setData({
+        books: res.data
+      })
     })
     // const promise = new Promise((resolve, reject) => {
     //   wx.getSystemInfo({
