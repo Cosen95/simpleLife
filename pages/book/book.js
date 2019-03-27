@@ -1,4 +1,9 @@
 // pages/book/book.js
+import { BookModel } from '../../models/book.js';
+
+let bookModel = new BookModel();
+
+
 Page({
 
   /**
@@ -12,22 +17,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const promise = new Promise((resolve, reject) => {
-      wx.getSystemInfo({
-        success: (res) => {
-          resolve(res)
-        },
-        fail: (err) => {
-          reject(err)
-        }
-      })
+    const bookList = bookModel.getHotList();
+    bookList.then((res) => {
+      console.log('书籍信息',res)
     })
+    // const promise = new Promise((resolve, reject) => {
+    //   wx.getSystemInfo({
+    //     success: (res) => {
+    //       resolve(res)
+    //     },
+    //     fail: (err) => {
+    //       reject(err)
+    //     }
+    //   })
+    // })
 
-    promise.then((res) => {
-      console.log('promise成功',res)
-    }, (err) => {
-      console.log('promise失败',err)
-    })
+    // promise.then((res) => {
+    //   console.log('promise成功',res)
+    // }, (err) => {
+    //   console.log('promise失败',err)
+    // })
   },
 
   /**
