@@ -56,3 +56,6 @@
     justify-content: space-between;
     padding: 0 90rpx 0 90rpx;
 }
+.books-container .book {
+    margin-bottom: 30rpx;
+}
