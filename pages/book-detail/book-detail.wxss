@@ -45,8 +45,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0 30rpx;
 }
 .comment-container v-tag {
     margin-right: 15rpx;
     margin-bottom: 10rpx;
+}
+.comment-container .num {
+    margin-left: 10rpx;
+    font-size: 22rpx;
+    color: #aaaaaa;
 }
