@@ -9,3 +9,5 @@
 * `wx:if` vs `hidden`：因为 wx:if 之中的模板也可能包含数据绑定，所以当 wx:if 的条件值切换时，框架有一个局部渲染的过程，因为它会确保条件块在切换时销毁或重新渲染。同时 wx:if 也是惰性的，如果在初始渲染条件为 false，框架什么也不做，在条件第一次变成真的时候才开始局部渲染。相比之下，hidden 就简单的多，组件始终会被渲染，只是简单的控制显示与隐藏。一般来说，wx:if 有更高的切换消耗而 hidden 有更高的初始渲染消耗。因此，如果需要频繁切换的情景下，用 hidden 更好，如果在运行时条件不大可能改变则 wx:if 较好。
 * hidden不会触发组件的detached,wx:if可以触发
 * 音频播放：onPlay(function callback) 监听背景音频播放事件 / onPause(function callback) 监听背景音频暂停事件 onStop(function callback) 监听背景音频停止事件 / onEnded(function callback) 监听背景音频自然播放结束事件
+* 组件wxml的slot:在组件的wxml中可以包含 slot 节点，用于承载组件使用者提供的wxml结构。默认情况下，一个组件的wxml中只能有一个slot。需要使用多slot时，可以在组件js中声明启用。( `multipleSlots: true` / 在组件定义时的选项中启用多slot支持)
+* 外部样式类:有时，组件希望接受外部传入的样式类。此时可以在 Component 中用 `externalClasses` 定义段定义若干个外部样式类。这个特性从小程序基础库版本 1.9.90 开始支持。
