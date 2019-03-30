@@ -5,4 +5,12 @@
         <text class="title">{{book.title}}</text>
         <text class="author">{{book.author}}</text>
     </view>
+    <view class="sub-container">
+        <text class="headline">短评</text>
+        <view class="comment-container">
+            <block wx:key="content" wx:for="{{comments}}">
+                <v-tag text="{{item.content}}" />
+            </block>
+        </view>
+    </view>
 </view>

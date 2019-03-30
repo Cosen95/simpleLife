@@ -7,7 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    book: {}
+    book: {},
+    comments: [],
+    likeStatus: false,
+    likeCount: 0
   },
 
   /**
@@ -25,6 +28,9 @@ Page({
     bookModel.getComment()
     .then(res => {
       console.log('短评信息',res);
+      this.setData({
+        comments: res.data.comment
+      })
     })
     bookModel.getLikeStatus()
     .then(res => {

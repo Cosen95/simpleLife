@@ -1,0 +1,4 @@
+<!--components/tag/index.wxml-->
+<view class="container">
+    <text class="">{{text}}</text>
+</view>

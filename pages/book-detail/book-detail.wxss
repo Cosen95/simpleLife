@@ -26,3 +26,27 @@
     height: 300rpx;
     box-shadow: 2px 2px 3px #e3e3e3;
 }
+.sub-container {
+    width: 690rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30rpx;
+    background-color: #ffffff;
+    padding: 30rpx;
+}
+.headline {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #2f2f2f;
+    margin-bottom: 20rpx;
+}
+.comment-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.comment-container v-tag {
+    margin-right: 15rpx;
+    margin-bottom: 10rpx;
+}
