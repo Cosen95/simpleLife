@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    book: {}
   },
 
   /**
@@ -18,6 +18,9 @@ Page({
     bookModel.getBookDetail()
     .then(res => {
       console.log('书籍详情',res);
+      this.setData({
+        book: res.data
+      })
     })
     bookModel.getComment()
     .then(res => {
