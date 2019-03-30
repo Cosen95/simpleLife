@@ -6,6 +6,24 @@ class BookModel extends HTTP {
             url: 'book/hot_list'
         })
     }
+
+    getBookDetail() {
+        return this.request({
+            url: 'book/detail'
+        })
+    }
+
+    getLikeStatus() {
+        return this.request({
+            url: 'book/favor'
+        })
+    }
+
+    getComment() {
+        return this.request({
+            url: 'book/short_comment'
+        })
+    }
 }
 
 export { BookModel }
