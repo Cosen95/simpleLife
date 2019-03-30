@@ -52,6 +52,7 @@
     margin-right: 15rpx;
     margin-bottom: 10rpx;
 }
+/* hack方式 */
 /* .comment-container > v-tag:nth-child(1) > view {
     background-color: #fffbdd; 
 }
@@ -63,6 +64,9 @@
     font-size: 22rpx;
     color: #aaaaaa;
 }
-.ex-tag {
-    background-color: #fffbdd!important; 
+.ex-tag-first {
+    background-color: #fffbdd !important; 
+}
+.ex-tag-second {
+    background-color: #eefbff !important;
 }
