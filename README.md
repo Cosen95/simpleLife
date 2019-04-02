@@ -11,3 +11,4 @@
 * 音频播放：onPlay(function callback) 监听背景音频播放事件 / onPause(function callback) 监听背景音频暂停事件 onStop(function callback) 监听背景音频停止事件 / onEnded(function callback) 监听背景音频自然播放结束事件
 * 组件wxml的slot:在组件的wxml中可以包含 slot 节点，用于承载组件使用者提供的wxml结构。默认情况下，一个组件的wxml中只能有一个slot。需要使用多slot时，可以在组件js中声明启用。( `multipleSlots: true` / 在组件定义时的选项中启用多slot支持)
 * 外部样式类:有时，组件希望接受外部传入的样式类。此时可以在 Component 中用 `externalClasses` 定义段定义若干个外部样式类。这个特性从小程序基础库版本 1.9.90 开始支持。
+* wxs: WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。WXS 的运行环境和其他 JavaScript 代码是隔离的，WXS 中不能调用其他 JavaScript 文件中定义的函数，也不能调用小程序提供的API。
