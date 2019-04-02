@@ -91,3 +91,37 @@
     color: #999999;
     margin-right: 30rpx;
 }
+.post-container {
+    height: 100rpx;
+    box-shadow: 1px -1px 1px #e3e3e3;
+    position: fixed;
+    width: 690rpx;
+    background-color: #fff;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30rpx;
+    justify-content: space-between;
+}
+.post-fake {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60rpx;
+    width: 460rpx;
+    border: 1px solid #999;
+    border-radius: 15px;
+    font-size: 22rpx;
+    padding-left: 20rpx;
+}
+.like {
+    margin-right: 30rpx;
+    margin-top: 10rpx;
+}
+.like-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

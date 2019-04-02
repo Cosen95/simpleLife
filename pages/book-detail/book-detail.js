@@ -1,6 +1,10 @@
 // pages/book-detail/book-detail.js
 import { BookModel } from '../../models/book';
+import { LikeModel } from '../../models/like.js';
+
 const bookModel = new BookModel();
+let likeModel = new LikeModel();
+
 Page({
 
   /**
@@ -35,7 +39,18 @@ Page({
     bookModel.getLikeStatus()
     .then(res => {
       console.log('喜欢',res);
+      this.setData({
+        likeStatus: res.data.like_status,
+        likeCount: res.data.fav_nums
+      })
     })
+  },
+
+  handleLike: function(event) {
+    let { detail = {} } = event;
+    let { behavior = '' } = detail;
+    const { id } = this.data.book;
+    likeModel.like(behavior,id,400)
   },
 
   /**

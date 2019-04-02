@@ -42,3 +42,12 @@
         </view>
     </view>
 </view>
+
+<view class="post-container">
+    <view class="post-fake">
+        <text>输入短评</text>
+    </view>
+    <view class="like-container">
+        <v-like bind:like="handleLike" class="like" like="{{likeStatus}}" count="{{likeCount}}" />
+    </view>
+</view>
