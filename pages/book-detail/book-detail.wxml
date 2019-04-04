@@ -43,11 +43,22 @@
     </view>
 </view>
 
-<view class="post-container">
-    <view class="post-fake">
+<view class="post-container" wx:if="{{!posting}}">
+    <view class="post-fake" bind:tap="handleFakePost">
         <text>输入短评</text>
     </view>
     <view class="like-container">
         <v-like bind:like="handleLike" class="like" like="{{likeStatus}}" count="{{likeCount}}" />
     </view>
+</view>
+
+<view class="posting-container" wx:if="{{posting}}">
+    <view class="post-header">
+        <text>仅可点击标签+1</text>
+        <text class="cancel" bind:tap="handleCancel">取消</text>
+    </view>
+    <view class="comment-container">
+    
+    </view>
+    <input type="text" placeholder="短评最多12个字" class="post" />
 </view>

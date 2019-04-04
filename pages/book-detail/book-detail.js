@@ -14,7 +14,8 @@ Page({
     book: {},
     comments: [],
     likeStatus: false,
-    likeCount: 0
+    likeCount: 0,
+    posting: false
   },
 
   /**
@@ -52,7 +53,16 @@ Page({
     const { id } = this.data.book;
     likeModel.like(behavior,id,400)
   },
-
+  handleFakePost: function() {
+    this.setData({
+      posting: true
+    })
+  },
+  handleCancel: function() {
+    this.setData({
+      posting: false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
