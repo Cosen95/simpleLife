@@ -69,6 +69,8 @@
     <input type="text" placeholder="短评最多12个字" class="post" />
 </view>
 
+<v-mask wx:if="{{posting}}" />
+
 <wxs module="tool">
     var highLight = function(index) {
         if(index === 0) {
