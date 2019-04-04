@@ -9,8 +9,8 @@
     <view class="sub-container">
         <text class="headline">短评</text>
         <view class="comment-container">
-            <block wx:key="content" wx:for="{{filter.limit(comments,0,3)}}">
-                <v-tag tag-class="{{index === 0 ? 'ex-tag-first' : '' || index ===1 ? 'ex-tag-second' : ''}}" text="{{item.content}}">
+            <block wx:key="content" wx:for="{{filter.limit(comments,0,5)}}">
+                <v-tag tag-class="{{tool.highLight(index)}}" text="{{item.content}}">
                     <text class="num" slot="num">
                         {{'+'+item.nums}}
                     </text>
@@ -58,7 +58,29 @@
         <text class="cancel" bind:tap="handleCancel">取消</text>
     </view>
     <view class="comment-container">
-    
+        <block wx:key="content" wx:for="{{filter.limit(comments,0,3)}}">
+                <v-tag tag-class="{{tool.highLight(index)}}" text="{{item.content}}">
+                    <text class="num" slot="num">
+                        {{'+'+item.nums}}
+                    </text>
+                </v-tag>
+            </block>
     </view>
     <input type="text" placeholder="短评最多12个字" class="post" />
 </view>
+
+<wxs module="tool">
+    var highLight = function(index) {
+        if(index === 0) {
+            return 'ex-tag-first'
+        }
+        if(index === 1) {
+            return 'ex-tag-second'
+        }
+        return ''
+    }
+
+    module.exports = {
+        highLight: highLight
+    }
+</wxs>

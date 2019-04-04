@@ -159,3 +159,11 @@
     width: 690rpx;
     padding: 40rpx 30rpx 0 30rpx
 }
+.post {
+    width: 690rpx;
+    margin: 30rpx auto;
+    height: 56rpx;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    padding-left: 25rpx;
+}
