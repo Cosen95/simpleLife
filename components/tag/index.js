@@ -22,6 +22,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleTap(event) {
+      this.triggerEvent('tapping', {
+        text: this.properties.text
+      })
+    }
   }
 })

@@ -1,5 +1,5 @@
 <!--components/tag/index.wxml-->
-<view class="container tag-class">
+<view class="container tag-class" bind:tap="handleTap">
     <text class="">{{text}}</text>
     <slot name="num"></slot>
 </view>

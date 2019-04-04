@@ -63,6 +63,17 @@ Page({
       posting: false
     })
   },
+  handlePost: function(event) {
+    const comment = event.detail.text;
+    if(comment.length > 12) {
+      wx.showToast({
+        title: '短评最多12个字',
+        icon: 'none'
+      })
+      return
+    }
+    // TODO：短评数据提交服务器逻辑
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
