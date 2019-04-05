@@ -64,7 +64,11 @@ Page({
     })
   },
   handlePost: function(event) {
-    const comment = event.detail.text;
+    // 点击标签或通过输入框添加评论
+    const comment = event.detail.text || event.detail.value;
+    if(!comment) {
+      return
+    }
     if(comment.length > 12) {
       wx.showToast({
         title: '短评最多12个字',
