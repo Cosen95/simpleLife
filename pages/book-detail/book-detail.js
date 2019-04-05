@@ -23,28 +23,43 @@ Page({
    */
   onLoad: function (options) {
     const { bid } = options;
-    bookModel.getBookDetail()
-    .then(res => {
-      console.log('书籍详情',res);
-      this.setData({
-        book: res.data
+    const detail = bookModel.getBookDetail();
+    const comment = bookModel.getComment();
+    const like = bookModel.getLikeStatus();
+    wx.showLoading();
+    Promise.all([detail, comment, like])
+      .then(res => {
+        console.log(res);
+        this.setData({
+          book: res[0].data,
+          comments: res[1].data.comment,
+          likeStatus: res[2].data.like_status,
+          likeCount: res[2].data.fav_nums
+        })
+        wx.hideLoading();
       })
-    })
-    bookModel.getComment()
-    .then(res => {
-      console.log('短评信息',res);
-      this.setData({
-        comments: res.data.comment
-      })
-    })
-    bookModel.getLikeStatus()
-    .then(res => {
-      console.log('喜欢',res);
-      this.setData({
-        likeStatus: res.data.like_status,
-        likeCount: res.data.fav_nums
-      })
-    })
+    // bookModel.getBookDetail()
+    // .then(res => {
+    //   console.log('书籍详情',res);
+    //   this.setData({
+    //     book: res.data
+    //   })
+    // })
+    // bookModel.getComment()
+    // .then(res => {
+    //   console.log('短评信息',res);
+    //   this.setData({
+    //     comments: res.data.comment
+    //   })
+    // })
+    // bookModel.getLikeStatus()
+    // .then(res => {
+    //   console.log('喜欢',res);
+    //   this.setData({
+    //     likeStatus: res.data.like_status,
+    //     likeCount: res.data.fav_nums
+    //   })
+    // })
   },
 
   handleLike: function(event) {

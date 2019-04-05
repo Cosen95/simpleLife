@@ -13,3 +13,5 @@
 * 外部样式类:有时，组件希望接受外部传入的样式类。此时可以在 Component 中用 `externalClasses` 定义段定义若干个外部样式类。这个特性从小程序基础库版本 1.9.90 开始支持。
 * wxs: WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。WXS 的运行环境和其他 JavaScript 代码是隔离的，WXS 中不能调用其他 JavaScript 文件中定义的函数，也不能调用小程序提供的API。
 * triggerEvent: 自定义组件触发事件时，需要使用 triggerEvent 方法，指定事件名、detail对象和事件选项
+* input事件bindconfirm: 点击完成按钮时触发
+* 并行请求与串行请求: `Promise.all` / `Promise.race`
