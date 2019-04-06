@@ -15,3 +15,4 @@
 * triggerEvent: 自定义组件触发事件时，需要使用 triggerEvent 方法，指定事件名、detail对象和事件选项
 * input事件bindconfirm: 点击完成按钮时触发
 * 并行请求与串行请求: `Promise.all` / `Promise.race`
+* 组件生命周期: `created`（组件实例刚刚创建，不能调用setData） / `attached`（组件完全初始化完毕，此生命周期比较重要，可进行初始化操作）/ `detached`（组件离开页面节点树时触发）
