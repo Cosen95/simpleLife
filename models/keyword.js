@@ -1,4 +1,6 @@
-class KeywordModel {
+import { HTTP } from '../util/http-promise.js';
+
+class KeywordModel extends HTTP {
     key = 'q'
     maxLen = 5
     getHistory() {
@@ -10,7 +12,9 @@ class KeywordModel {
     }
 
     getHot() {
-
+        return this.request({
+            url: 'book/hot_keyword'
+        })
     }
 
     addToHistory(keyword) {

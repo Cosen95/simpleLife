@@ -13,12 +13,19 @@ Component({
    * 组件的初始数据
    */
   data: {
-    historyWords: []
+    historyWords: [],
+    hotWords: []
   },
 
   attached() {
     // 在组件实例进入页面节点树时执行
     const historyWords = keywordModel.getHistory();
+    const hotWords = keywordModel.getHot();
+    hotWords.then(res => {
+      this.setData({
+        hotWords: res.data.hot
+      })
+    })
     this.setData({
       historyWords
     })
