@@ -7,45 +7,34 @@ import {
      
     },
     data: {
-      start: 0,
-      count: 20,
       dataArray: [],
-      empty:false,
-      ending:false
+      total: 0
     },
   
     methods: {
       setMoreData: function(dataArray) {
-        if (dataArray==false) {
-          this.data.ending = true
-          if(this.data.dataArray==false){
-            this.setData({
-              empty:true
-            })
-          }
-        }
-        let temp =this.data.dataArray.concat(dataArray)
-        this.data.start += this.data.count
+        const tempArray =this.data.dataArray.concat(dataArray)
         this.setData({
-          dataArray: temp
+          dataArray: tempArray
         })
-        return true
       },
   
       hasMore:function(){
-        return !this.data.ending
+        if(this.data.dataArray.length >= this.data.total) {
+            return false
+        } else {
+            return true
+        }
       },
   
       getCurrentStart:function(){
-        return this.data.start
+        return this.data.dataArray.length
       },
       setTotal(total) {
         this.data.total = total;
       },
       // 初始化书籍列表数据，防止数据重复渲染
       initPagination:function(){
-        this.data.ending = false
-        this.data.start = 0
         this.data.dataArray = []
         this.setData({
           dataArray:[]
