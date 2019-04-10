@@ -1,6 +1,7 @@
 <!--pages/my/my.wxml-->
 <view class="container">
     <image class="bg" src="/images/my/my@bg.png"></image>
+    <open-data type="userAvatarUrl" class="avatar avatar-position"></open-data>
     <view class="about-container">
         <view class="about-us">
             <image src="/images/my/about.png" />
