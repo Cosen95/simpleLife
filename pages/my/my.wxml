@@ -11,4 +11,7 @@
             <text class="description">喜欢的书</text>
         </view>
     </view>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">
+  获取用户信息
+</button>
 </view>
