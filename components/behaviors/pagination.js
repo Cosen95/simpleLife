@@ -35,7 +35,6 @@ import {
       },
       // 初始化书籍列表数据，防止数据重复渲染
       initPagination:function(){
-        this.data.dataArray = []
         this.setData({
           dataArray:[]
         })
