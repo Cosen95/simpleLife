@@ -12,10 +12,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.userAuthorized()
   },
   getUserInfo(event) {
     console.log(event);
+  },
+  userAuthorized() {
+    wx.getSetting({
+      success:data => {
+       if(data.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success:data => {
+              
+            }
+          })
+       } else {
+
+       }
+      }
+    })
   },
 
   /**
