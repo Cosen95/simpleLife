@@ -1,7 +1,14 @@
 <!--pages/my/my.wxml-->
 <view class="container">
     <image class="bg" src="/images/my/my@bg.png"></image>
-    <open-data type="userAvatarUrl" class="avatar avatar-position"></open-data>
+    <!-- <open-data type="userAvatarUrl" class="avatar avatar-position"></open-data> -->
+    <v-button
+        class="avatar-position"
+        open-type="getUserInfo"
+        bind:getuserinfo="handleGetUserInfo"
+    >
+        <image class="avatar" slot="img" src="/images/my/my.png" />
+    </v-button>
     <view class="about-container">
         <view class="about-us">
             <image src="/images/my/about.png" />

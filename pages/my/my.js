@@ -17,13 +17,16 @@ Page({
   getUserInfo(event) {
     console.log(event);
   },
+  handleGetUserInfo(event) {
+    const userInfo = event.detail.userInfo;
+  },
   userAuthorized() {
     wx.getSetting({
       success:data => {
        if(data.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success:data => {
-              
+
             }
           })
        } else {
