@@ -24,3 +24,4 @@
 * wx.getUserInfo获取用户信息需要用户先授权: 在用户未授权过的情况下调用此接口，将不再出现授权弹窗，会直接进入 fail 回调。在用户已授权的情况下调用此接口，可成功获取用户信息。
 * wx.getSetting: 成功的回调函数中authSetting(用户授权结果)
 * 微信小程序获取用户信息的两种方法wx.getUserInfo&open-data: `https://blog.csdn.net/lucky_zeng/article/details/80066479`
+* wx.navigateTo(对应navigator组件): 保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面。使用 wx.navigateBack 可以返回到原页面。小程序中页面栈最多十层。
