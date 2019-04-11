@@ -2,7 +2,12 @@
 <view class="container">
     <view class="header">
         <v-epsoide class="epsoide" index="{{index}}" />
-        <v-like class="like" bind:like="handleLike" check="{{check}}" count="{{count}}" />
+        <view class="like-container">
+            <v-like class="like" bind:like="handleLike" check="{{check}}" count="{{count}}" />
+            <v-button class="share-btn" open-type="share">
+                <image class="share" slot="img" src="/images/icon/share.png" />
+            </v-button>
+        </view>
     </view>
     <v-movie wx:if="{{type === 100}}" content="{{content}}" image="{{image}}" />
     <v-music wx:if="{{type === 200}}" src="{{url}}" title="{{title}}" content="{{content}}" image="{{image}}" />
